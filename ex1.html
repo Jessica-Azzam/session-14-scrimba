@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-image:url('stationagain.jpg ');
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            color: aliceblue;
+            line-height: 2;
+
+
+        }
+        .content{
+            border: 1px solid white;
+            width: 50%;
+            background-color: gray;
+            opacity: 0.9;
+            margin: auto;
+            height: 50%;
+            border-radius: 7px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+        }
+        h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+#count-el {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: aliceblue;
+}
+
+button {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#increment-btn {
+    background: darkred;
+}
+
+#save-btn {
+    background: darkgreen;
+}
+
+
+    </style>
+    <div class="container">
+        <div class="content">
+        <h1>People entered:</h1>
+        <h2 id="count-el">0</h2>
+        <button id="increment-btn" onclick="increment()">INCREMENT</button>
+        <button id="save-btn" onclick="save()">SAVE</button><br><br>
+        <b id="save-ent">Previous entries: </b>
+    </div>
+   <script>
+     let countEl=document.getElementById('count-el')
+     let count=0
+     let saveEnt=document.getElementById('save-ent')
+     function increment(){
+        count++
+        countEl.textContent=count
+     }
+     function save(){
+       
+        let counter = count + " - "
+        saveEnt.textContent += counter
+        count=0
+        countEl.innerText=0
+        
+     }
+   </script>
+</body>
+
+</html>
